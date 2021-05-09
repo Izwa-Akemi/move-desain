@@ -63,7 +63,6 @@ img {
 .blog-list{
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
 }
 
 .blog-item{
