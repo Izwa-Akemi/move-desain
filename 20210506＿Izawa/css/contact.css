@@ -1,0 +1,282 @@
+@charset "UTF-8";
+/*----------------共通設定---------------------*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro",
+    "Yu Gothic Medium", "游ゴシック Medium", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+.container-s {
+  width: 60%;
+  margin: 0 auto;
+}
+.gap {
+  padding: 80px 0;
+}
+
+.btn {
+  display: block;
+  width: 300px;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #cd0224;
+  color: #fff;
+}
+
+.ttl {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.page-img {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: url(../img/mv.png) center / cover;
+}
+
+/*------------------contact---------------*/
+
+.contact-form-item:not(:first-child){
+  margin-top: 20px;
+}
+
+.contact-form-item-name{
+  font-weight: bold;
+}
+
+.contact-form-item-input{
+  margin-top: 5px;
+  font-size: 16px;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.contact-form-item-textarea{
+  font-size: 16px;
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #ccc;
+	appearance: none;
+	-webkit-appearance: none;
+  -moz-appearance: none;
+  resize: none;
+}
+
+.contact-form-item-required{
+  color: #cd0224;
+  margin-left: 5px;
+}
+
+.contact-form-submit{
+  width: 300px;
+  margin: 20px auto 0;
+	padding: 10px;
+	border: none;
+  display: block;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+/*----------------------全ページ共通部分ー--------------------*/
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 30px;
+  background-color: #fff;
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.header-ttl {
+  font-size: 24px;
+  width: 80px;
+}
+
+.header-nav-list {
+  display: flex;
+  font-weight: bold;
+}
+
+.header-nav-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.hamburger-menu {
+  display: none;
+}
+.hamburger-nav {
+  display: none;
+}
+
+/* footer */
+
+.footer {
+  padding: 20px 0;
+  color: #fff;
+  background-color: #222;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.footer-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-nav-item:after {
+  content: "|";
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.footer-nav-item:last-child:after {
+  display: none;
+}
+/*-----------------全共通レスポンシブ-------------------*/
+@media screen and (max-width: 768px) {
+  .container {
+    width: 85%;
+  }
+
+  .wrap-s {
+    width: 90%;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: inline-block;
+    width: 36px;
+    height: 32px;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+  }
+
+  .hamburger-menu-line-top,
+  .hamburger-menu-line-middle,
+  .hamburger-menu-line-bottom {
+    display: inline-block;
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    position: absolute;
+    transition: 0.5s;
+  }
+
+  .hamburger-menu-line-top {
+    top: 0;
+  }
+
+  .hamburger-menu-line-middle {
+    top: 14px;
+  }
+
+  .hamburger-menu-line-bottom {
+    bottom: 0;
+  }
+
+  .hamburger-menu.open span:nth-of-type(1) {
+    top: 14px;
+    transform: rotate(45deg);
+  }
+
+  .hamburger-menu.open span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.open span:nth-of-type(3) {
+    top: 14px;
+    transform: rotate(-45deg);
+  }
+
+  .hamburger-nav{
+    display: block;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: -100%;
+    background: #fff;
+    transition: .7s;
+  }
+
+  .hamburger-nav-list {
+    padding-top: 80px;
+    text-align: center;
+  }
+
+  .hamburger-nav-item {
+    margin-top: 40px;
+    color: #0033cc;
+    font-size: 18px;
+  }
+
+  .in {
+    transform: translateX(100%);
+  }
+
+  .footer-copyright {
+    margin: 0 auto;
+  }
+
+  .footer-nav-item {
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .footer-nav-item:after {
+    display: none;
+  }
+}
